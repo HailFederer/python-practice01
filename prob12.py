@@ -25,20 +25,28 @@
 #         print(strNum +' '+ clap)
 
 
-def game(num):
-    clap = ''
-    for index in range(len(num)):
-        digit = num[index : index+1]
-        if digit == '3' or digit == '6' or digit == '9':
-            clap += '짝'
-    return clap
+# def game(num):
+#     clap = ''
+#     for index in range(len(num)):
+#         digit = num[index : index+1]
+#         if digit == '3' or digit == '6' or digit == '9':
+#             clap += '짝'
+#     return clap
+#
+#
+# for num in range(1, 1000):
+#     strNum = str(num)
+#     clap = game(strNum)
+#     if clap != '':
+#         print('{0:3} {1}'.format(int(strNum), clap))
 
+for n in range(1, 1000):
+    s = str(n)
+    c = s.count('3') + s.count('6') + s.count('9')
+    if c < 1:
+        continue
 
-for num in range(1, 1000):
-    strNum = str(num)
-    clap = game(strNum)
-    if clap != '':
-        print('{0:3} {1}'.format(int(strNum), clap))
+    print("{0} {1}".format(s, '짝'*c))
 
 
 
